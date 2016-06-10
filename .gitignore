@@ -1,0 +1,9 @@
+# Vagrant artifacts
+.vagrant
+
+# IDE artifacts
+.idea
+**/*.iml
+
+# Run-time artifacts
+**/*.log
