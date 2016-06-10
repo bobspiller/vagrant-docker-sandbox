@@ -10,17 +10,19 @@ apt-get update
 
 JDK_URL="http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz"
 JDK_ARCHIVE="jdk-linux-x64.tar.gz"
-WGET_OPTS="-nv -O ${JDK_ARCHIVE}"
-ORACLE_LICENSE_OPTS="--continue --no-check-certificate --header 'Cookie: oraclelicense=a'"
+#WGET_OPTS="-nv -O ${JDK_ARCHIVE}"
+#ORACLE_LICENSE_OPTS="--continue --no-check-certificate --header 'Cookie: oraclelicense=a'"
+
 cd /tmp
-wget ${WGET_OPTS} ${ORACLE_LICENSE_OPTS} ${JDK_URL}
-#wget -nv -O jdk-linux-x64.tar.gz ${JDK_URL}
+wget -nv -O ${JDK_ARCHIVE}\
+ --continue --no-check-certificate\
+ --header "Cookie: oraclelicense=a" ${JDK_URL}
 
 if [ ! -d /opt/java ]; then
     mkdir /opt/java
 fi
 cd /opt/java 
-tar -C /opt/java xvfz /tmp/${JDK_ARCHIVE}
+tar -C /opt/java -zxvf /tmp/${JDK_ARCHIVE}
 rm /tmp/${JDK_ARCHIVE}
 
 

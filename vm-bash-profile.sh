@@ -30,4 +30,6 @@ PATH=${M2_HOME}/bin:${PATH}
 JAVA_HOME=/opt/java/jdk1.8.0_91
 PATH=${JAVA_HOME}/bin:${PATH}
 
-export PATH M2_HOME JAVA_HOME
+EDITOR=/usr/bin/vim
+
+export PATH M2_HOME JAVA_HOME EDITOR
