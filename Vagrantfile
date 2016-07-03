@@ -9,7 +9,14 @@ Vagrant.configure(2) do |config|
   end
   config.vm.network "forwarded_port", guest: 80, host: 10080
   config.vm.network "forwarded_port", guest: 8080, host: 18080
-  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "bootstrap.sh",
+    env: {
+        # Which get.docer.com prefix to use, defaults to get.
+        # Use "test" for release candidates and "experimental" for 
+        # experimental builds.
+        "VDS_WHICH_DOCKER" => ENV["VDS_WHICH_DOCKER"],
+        "VDS_FOO"          => "VDS_BAR"
+    }
   config.vm.provision "file", source: "vm-bash-profile.sh", destination: ".bash_profile"
   config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
   config.vm.provision "file", source: "~/.vimrc", destination: ".vimrc"

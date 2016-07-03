@@ -1,9 +1,10 @@
 # Vagrant artifacts
 .vagrant
 
-# IDE artifacts
+# IDE and editor artifacts
 .idea
 **/*.iml
+**/.*.swp
 
 # Run-time artifacts
 **/*.log

@@ -40,8 +40,13 @@ cd /tmp &&\
 # This gets APT docker package
 #sudo apt-get install -y docker.io
 
+# which docker version to grab:
+if [ -z "${VDS_WHICH_DOCKER}" ]; then
+    VDS_WHICH_DOCKER=get
+fi
+
 # This gets the latest available version of docker
-/usr/bin/curl -sSL https://get.docker.com/ | sh
+/usr/bin/curl -sSL https://${VDS_WHICH_DOCKER}.docker.com/ | sh
 
 #
 # Allow vagrant user to run docker commands
