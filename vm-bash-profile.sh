@@ -27,7 +27,7 @@ M2_HOME=/opt/apache-maven-3.3.9
 PATH=${M2_HOME}/bin:${PATH}
 
 #JAVA_HOME=/opt/java/jdk1.7.0_91
-JAVA_HOME=/opt/java/jdk1.8.0_91
+JAVA_HOME=/opt/java/jdk1.8.0_144
 PATH=${JAVA_HOME}/bin:${PATH}
 
 EDITOR=/usr/bin/vim
