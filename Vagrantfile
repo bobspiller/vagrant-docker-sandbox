@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 18080
   config.vm.provision :shell, path: "bootstrap.sh",
     env: {
-        # Which get.docer.com prefix to use, defaults to get.
+        # Which get.docker.com prefix to use, defaults to get.
         # Use "test" for release candidates and "experimental" for 
         # experimental builds.
         "VDS_WHICH_DOCKER" => ENV["VDS_WHICH_DOCKER"],

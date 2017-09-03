@@ -8,3 +8,8 @@
 
 # Run-time artifacts
 **/*.log
+
+#
+# Redis persistence files
+# ref: https://redis.io/topics/persistence
+**/*.rdb
